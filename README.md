@@ -16,16 +16,18 @@ This repository also contains an implementation of the reordering algorithm by
 
 ## Prerequisites
 
-1. The reordering algorithms relies on having a UD parser for the 
+- The reordering algorithms relies on having a UD parser for the 
 source language. The package utilize [Trankit](https://github.com/nlp-uoregon/trankit) 
 internally in order to parse the source sentences,
 which means, for basic usage, it only supports languages that are supported by Trankit.
 For advance usage, it is possible to provide your own parse tree of the sentence.
-2. The reordering algorithm is based  on pairwise constraints regulating the linear order
+- The reordering algorithm is based  on pairwise constraints regulating the linear order
 of subtrees that share a common parent, which we term POCs for
 “pairwise ordering constraints”. For further information about these POCs please see the paper.
 These POCs can be extracted from UD treebanks and are required for the running of the algorithm.
-Several POCs has been extracted and are available for usage. To further extract more POCs see the guide below.
+Several POCs have been extracted and are available for usage. 
+For the full list of avilable POCs see the ```estimates_path_dict``` in the `init` function of 
+the `UdReorderingAlgo` class in `reordering_package/ud_reorder_algo.py`. To further extract more POCs see the guide below.
 
 ## Usage
 
