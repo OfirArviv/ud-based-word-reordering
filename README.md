@@ -5,7 +5,7 @@
 This repository contains an implementation of a reordering algorithm
 described in the paper [Improving Cross-lingual Transfer through
 Subtree-aware Word Reordering]().
-The algorithm, which is defined in terms of [Universal Dependencies](https://universaldependencies.org/)
+The algorithm, which is defined in terms of [Universal Dependencies](https://universaldependencies.org/),
 is designed to enhance cross-lingual transfer 
 by intelligently reordering words in a sentence. This README
 provides step-by-step instructions on how to use the algorithm 
@@ -39,10 +39,10 @@ from ud_reorder_algo import UdReorderingAlgo
 # Define the input language. If you are relying on Trankit to parse the source sentence, the source language need to be supported by it.
 input_language: str = "english"
 
-# Define the reorder algorithm variant. Currently the following algorithm are supported: UdReorderingAlgo.ReorderAlgo.HUJI and ,UdReorderingAlgo.ReorderAlgo.RASOOLINI.
+# Define the reorder algorithm variant. Currently the following algorithms are supported: UdReorderingAlgo.ReorderAlgo.HUJI and UdReorderingAlgo.ReorderAlgo.RASOOLINI.
 algorithm_type = UdReorderingAlgo.ReorderAlgo.HUJI
 
-# Get the reorder algorithm main class
+# Get the reorder algorithm main clas.
 reorder_algorithm = UdReorderingAlgo(algorithm_type, input_language)
 ````
 
@@ -66,7 +66,7 @@ entities = [
 This is an object of type ```reorder_mapping (Dict[int, int])```
 which represent a reorder mapping of ```original_pos -> reordered_position``` of a sentence.
 ```
-# Get the reorder mapping
+# Get the reorder mapping.
 mapping = reorder_algorithm.get_entities_aware_reorder_mapping(sentence,
                                                                reorder_by_lang,
                                                                entities)
@@ -74,7 +74,7 @@ mapping = reorder_algorithm.get_entities_aware_reorder_mapping(sentence,
 
 5. Reorder the sentence.
 ````
-# Reorder the parsed sentence
+# Reorder the parsed sentence.
 reordered_sentence: str = UdReorderingAlgo.reorder_sentence(sentence, mapping)
 ````
 
@@ -91,7 +91,7 @@ package.
 import conllu
 
 parse_tree: conllu.TokenList = [parse tree here]
-# Get the reorder mapping
+# Get the reorder mapping.
 mapping = reorder_algorithm.get_entities_aware_reorder_mapping_with_parse_tree_input(sentence,
                                                                                      reorder_by_lang,
                                                                                      entities,
@@ -115,10 +115,12 @@ the `UdReorderingAlgo` class in `reordering_package/ud_reorder_algo.py`.
 ````
 python reordering_package/rasoolini_ud_reorder/reorder_rasoolini.py -i [input ud treebank in conllu format] -o [output-dir]
 ````
+2. Add the POCs path to the ```direction_path_dict``` in the `init` function of 
+the `UdReorderingAlgo` class in `reordering_package/ud_reorder_algo.py`.
 
 ## Citing
 
-If you use this reordering algorithm in your work, please cite the original  paper:
+If you use the reordering algorithms in your work, please cite the  paper:
 
 ````
 To be added
