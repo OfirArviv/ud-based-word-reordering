@@ -34,7 +34,7 @@ the `UdReorderingAlgo` class in `reordering_package/ud_reorder_algo.py`. To furt
 1. The first step is to define the reordering algorithm type and source language of the sentences to reorder.
 ````
 # Import the reordering algorithm main class
-from ud_reorder_algo import UdReorderingAlgo
+from reordering_package.ud_reorder_algo import UdReorderingAlgo
 
 # Define the input language. If you are relying on Trankit to parse the source sentence, the source language need to be supported by it.
 input_language: str = "english"
