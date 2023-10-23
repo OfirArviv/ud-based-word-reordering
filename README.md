@@ -4,7 +4,7 @@
 
 This repository contains an implementation of a reordering algorithm
 described in the paper [Improving Cross-lingual Transfer through
-Subtree-aware Word Reordering]().
+Subtree-aware Word Reordering](https://arxiv.org/abs/2310.13583).
 The algorithm, which is defined in terms of [Universal Dependencies](https://universaldependencies.org/),
 is designed to enhance cross-lingual transfer 
 by intelligently reordering words in a sentence. This README
@@ -123,7 +123,14 @@ the `UdReorderingAlgo` class in `reordering_package/ud_reorder_algo.py`.
 If you use the reordering algorithms in your work, please cite the  paper:
 
 ````
-To be added
+@misc{arviv2023improving,
+      title={Improving Cross-Lingual Transfer through Subtree-Aware Word Reordering}, 
+      author={Ofir Arviv and Dmitry Nikolaev and Taelin Karidi and Omri Abend},
+      year={2023},
+      eprint={2310.13583},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
 ````
 
 ## License
